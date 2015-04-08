@@ -3,3 +3,8 @@ Submitted <%= time_ago_in_words(@post.created_at) %> ago
 <%= link_to 'Edit', edit_post_path(@post) %>
 <%= link_to 'Delete', post_path(@post), method: :delete, data:{confirm: 'Are you sure ?'} %>
 <p><%= @post.body %></p>
+<%= @post.comments.count %> comments
+<%= render @post.comments %>
+
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
