@@ -1,12 +1,13 @@
 <h1><%= @post.title %></h1>
-Submitted <%= time_ago_in_words(@post.created_at) %> ago
+<small>Submitted <%= time_ago_in_words(@post.created_at) %> ago</small>
 <% if @post.user == current_user %>
-	<%= link_to 'Edit', edit_post_path(@post) %>
-	<%= link_to 'Delete', post_path(@post), method: :delete, data:{confirm: 'Are you sure ?'} %>
+	<p><small><%= link_to 'Edit', edit_post_path(@post) %> |
+	<%= link_to 'Delete', post_path(@post), method: :delete, data:{confirm: 'Are you sure ?'} %></small>
+	</p>
 	<% end %>
 <p><%= @post.body %></p>
-<%= @post.comments.count %> comments
+<p><small><%= @post.comments.count %> comments</small></p>
 <%= render @post.comments %>
-
-<h3>Add a comment:</h3>
+<hr>
+<h4>Add a comment:</h4>
 <%= render "comments/form" %>
