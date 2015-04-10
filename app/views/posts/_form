@@ -16,6 +16,10 @@
 			<%= f.label :body %><br>
 			<%= f.text_area :body, :class=>"form-control" %>
 		</div>
+		<div class="form-group">
+			<%= f.label :category %><br>
+			<%= f.select :category, [ 'Animals', 'Cake', 'Web' ], :prompt => 'Select One' %>
+		</div>
 
 			<%= f.submit class: "btn btn-primary", :value => "Send" %>
 		</form>

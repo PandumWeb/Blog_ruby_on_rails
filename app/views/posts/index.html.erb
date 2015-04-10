@@ -3,5 +3,7 @@
 	<h2><%= link_to post.title, post %></h2>
 	<p><%= post.created_at.strftime("%d %B %Y")%></p>
 	<p>Post by: <%= post.user.username %></p>
+	<span class="label label-info"> <%= post.category %></span>
+	
 	<p><%= post.body %></p>
 <% end %>
