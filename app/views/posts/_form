@@ -20,6 +20,10 @@
 			<%= f.label :category %><br>
 			<%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => false %>
 		</div>
+		<div class="form-group">
+			<%= f.label :tag %><br>
+			<%= f.collection_select :tag_id, Tag.all, :id, :name, :include_blank => false %>
+		</div>
 
 			<%= f.submit class: "btn btn-primary", :value => "Send" %>
 		</form>

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
 
-  resources :tags
+ 
+	resources :tags do
+   resources :posts
+end
 
   resources :categories do
   resources :posts

@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
 	validates :title, presence: true, length:{minimum:5}
 	validates :body, presence: true
 	belongs_to	:category, dependent: :destroy
-
+	has_many	:tags
 end

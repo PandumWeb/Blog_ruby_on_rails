@@ -21,6 +21,16 @@
                 <li><%= link_to post.category.name, category_posts_path(post.category) %> </li>
               <% end %>
               </ul>
+
+            </li>
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tags <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              <% Post.all.each do |post|%>
+                <li><%= link_to post.tags.name, tag_posts_path(post.tags) %> </li>
+              <% end %>
+              </ul>
+              
             </li>
             <li><%= link_to "New post", new_post_path %></li>
           </ul>
